@@ -69,3 +69,17 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.time-label {  
+  line-height: 14px;
+  height: 3.75em;
+  margin: 0px;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;  
+}
+.save-div {
+  vertical-align: middle;
+  height: 3.75em;
+  padding: 5px;
+}

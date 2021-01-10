@@ -33,101 +33,64 @@
     <div class="container">
       <!-- Timeblocks go here -->
       <div class="row">
-        <div class="col-md-3">9AM</div>
-        <div class="col-md-7">
-         
-          <textarea class=""></textarea>
-          
+        <div class="col-md-3">
+          <p class="time-label">9AM</p>
         </div>
-        <div class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></div>
+        <div class="col-md-7">        
+          <textarea id="agenda" rows="3" cols="70"></textarea>        
+        </div>
+        <div class="col-md-2 save-div">
+          <button type="button" class="btn btn-primary btn-md">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
+      </div>
+            
+      <div class="row">
+        <div class="col-md-3">
+          <p class="time-label">10AM</p>
+        </div>
+        <div class="col-md-7">        
+          <textarea id="agenda" rows="3" cols="70"></textarea>        
+        </div>
+        <div class="col-md-2 save-div">
+          <button type="button" class="btn btn-primary btn-md">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
       </div>
 
       <div class="row">
-        <div class="col-md-3">10AM</div>
-        <div class="col-md-7">
-              
-              <textarea class="form-control" ></textarea>
-              
+        <div class="col-md-3">
+          <p class="time-label">11AM</p>
         </div>
-            <div class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></div>
+        <div class="col-md-7">        
+          <textarea id="agenda" rows="3" cols="70"></textarea>         
+        </div>
+        <div class="col-md-2 save-div">
+          <button type="button" class="btn btn-primary btn-md">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
       </div>
-            
-          <tr>
-            <th class="col-md-3">11AM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">12PM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">1PM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">2PM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">3PM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">4PM</th>
-            <td class="col-md-7">
-            <div class="mb-3">
-            <label class="form-label"></label>
-            <textarea class="form-control" id="agenda" rows="2"></textarea>
-            </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
-          <tr>
-            <th class="col-md-3">PM</th>
-            <td class="col-md-7">
-              <div class="mb-3">
-              <label class="form-label"></label>
-              <textarea class="form-control" id="agenda" rows="2"></textarea>
-              </div>
-            </td>
-            <td class="col-md-2"><button type="button" class="btn btn-primary"><i class="fas fa-save"></i></button></td>
-          </tr>
     </div>
     <script type="text/javascript">
       //Display current date and time on page.
       var DateTime = luxon.DateTime;
       var localTime = DateTime.local().toLocaleString(DateTime.DATETIME_FULL);
       $("#currentDay").append("<p>" + localTime + "</p>");
+
+      //Day planner code
+            
+      $(".btn").on("click", function() {
+
+        var hourAgenda = document.getElementById("agenda").value;
+
+        localStorage.setItem("agenda", hourAgenda);
+        console.log(hourAgenda)
+
+
+      });
 
       
     </script>  
